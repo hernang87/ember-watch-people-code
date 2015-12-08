@@ -16,7 +16,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://watchpeoplecode.com",
+      'frame-src': "'self' http://watchpeoplecode.com",
+      'script-src': "'self' 'unsafe-eval' https://watchpeoplecode.com"      
+    }    
   };
 
   if (environment === 'development') {
