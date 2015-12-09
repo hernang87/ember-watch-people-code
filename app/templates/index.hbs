@@ -1,19 +1,33 @@
-<div class="streams">
+<div class="streams row">
 	<h2>Live Streams</h2>
-	{{#each model.liveStreams as |live|}}	
-		<div class="stream">
-			<iframe src="{{live.channel}}" frameborder="0" scrolling="no"></iframe>
+	{{#each model.liveStreams as |live|}}
+		<div class="panel panel-default">	
+			<div class="panel-heading">{{live.title}}</div>
+			<div class="stream panel-body">
+				<div class="col-sm-6">				
+					<iframe src="{{live.channel}}" frameborder="0" scrolling="no"></iframe>
+				</div>
+				<div class="col-sm-6">
+					<p class="streamer">Streamer: {{live.streamer}}</p>
+				</div>
+			</div>
 		</div>
 	{{/each}}
 </div>
 
 <div class="streams">
 	<h2>Upcoming Streams</h2>
-	<div class="streams">
-	{{#each model.upcomingStreams as |upcoming|}}
-		<div class="stream">
-			<iframe src="{{live.channel}}" frameborder="0" scrolling="no"></iframe>
+	{{#each model.upcomingStreams as |live|}}
+		<div class="panel panel-default">	
+			<div class="panel-heading">{{live.title}}</div>
+			<div class="stream panel-body">
+				<div class="col-sm-6">				
+					<iframe src="{{live.channel}}" frameborder="0" scrolling="no"></iframe>
+				</div>
+				<div class="col-sm-6">
+					<p class="streamer">Streamer: {{live.streamer}}</p>
+				</div>
+			</div>
 		</div>
 	{{/each}}
-	</div>
 </div>

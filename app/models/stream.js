@@ -9,9 +9,14 @@ export default DS.Model.extend({
     user: DS.attr(),     
     viewers: DS.attr(),
     
+
+    streamer: function() {
+        let pos = this.get('url').lastIndexOf('/');
+        return this.get('url').substr(pos + 1);
+    }.property('url'),
+
     channel: function() {
-    	let pos = this.get('url').lastIndexOf('/');
-    	return 'http://player.twitch.tv/?channel=' + this.get('url').substr(pos);
+    	return 'http://player.twitch.tv/?channel=' + this.get('streamer');
     }.property('url')
 
 });
