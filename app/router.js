@@ -6,7 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('streamer', { path: 'streamer/:id' });
+  this.route('streamer', { path: 'streamer/:streamer' });
 });
 
 export default Router;
