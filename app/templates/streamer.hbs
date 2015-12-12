@@ -1,1 +1,9 @@
-{{outlet}}
+<h2>Streamer: {{content.name}}</h2>
+<ul>
+{{#if content.twitch}}
+	<li>Twitch: {{content.twitch}}</li>
+{{/if}}
+{{#if content.youtube}}
+	<li>Youtube: {{content.youtube}}</li>
+{{/if}}
+</ul>
